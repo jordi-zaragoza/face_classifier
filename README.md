@@ -84,7 +84,7 @@ classifier(name='face5', path='data/blurry_test/blurry12.jpg')
 - tensorflow==2.9.1
 
 # Models
-This models have been trained separately using the code from [this other repository](https://github.com/jordi-zaragoza/pictures_classifier) that I created for 'weddings' pictures classification. Specially bad pictures with closed eyes.
+These models have been trained separately using the code from [this other repository](https://github.com/jordi-zaragoza/pictures_classifier) that I created for 'weddings' pictures classification. Specially bad pictures with closed eyes.
 
 I used a pretrained model MobilenetV2. And then retrained using my own dataset.
 
