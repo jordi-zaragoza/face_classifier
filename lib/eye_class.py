@@ -1,9 +1,9 @@
-from image_class import Image
-import model_lib
+from .image_class import Image
+from .model_lib import load_model
 
 
 class Eye(Image):
-    model = model_lib.load_model('model_eye_right')
+    model = load_model('model_eye_right')
 
     def __init__(self, name_face, image, side='right'):
         self.open = None

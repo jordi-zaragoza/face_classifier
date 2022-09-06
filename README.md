@@ -1,10 +1,108 @@
 # Face classifier
-This repository is used for face classification. 
+This repository is used for face classification. It can detect:
 
-### It can detect:
+- open-closed eyes
 - sunglasses
-- profile 
+- profile/frontal
 - blurry image.
 
-If frontal face, sharp and not using sunglasses:
-- open-closed eyes
+
+## Use Examples
+### Closed eyes:
+```python
+from lib.classifier import classifier
+classifier(name='face1', path='data/open_test/closed5.jpg')
+```
+
+![png](TRY_IT_files/TRY_IT_2_2.png)
+
+    {'name': 'face1',
+     'blurry': 0.0,
+     'profile': 0.0,
+     'sunglasses': 0.002,
+     'eyes': (0.009, 0.011)}
+
+### Open eyes:
+
+```python
+classifier(name='face2', path='data/open_test/open2.jpg')
+```
+
+![png](TRY_IT_files/TRY_IT_3_2.png)
+
+    {'name': 'face2',
+     'blurry': 0.0,
+     'profile': 0.0,
+     'sunglasses': 0.0,
+     'eyes': (0.763, 0.782)}
+
+### Profile image
+
+```python
+classifier(name='face3', path='data/profile_test/profile2.jpg')
+```
+
+![png](TRY_IT_files/TRY_IT_4_2.png)
+
+    {'name': 'face3',
+     'blurry': 0.0,
+     'profile': 1.0,
+     'sunglasses': None,
+     'eyes': None}
+
+### Sunglasses image
+
+```python
+classifier(name='face4', path='data/sunglasses_test/sunglass1.jpg')
+```
+
+![png](TRY_IT_files/TRY_IT_5_2.png)
+
+    {'name': 'face4',
+     'blurry': 0.0,
+     'profile': 0.093,
+     'sunglasses': 0.93,
+     'eyes': None}
+
+### Blurry image
+
+```python
+classifier(name='face5', path='data/blurry_test/blurry12.jpg')
+```
+![png](TRY_IT_files/TRY_IT_6_2.png)
+
+    {'name': 'face5',
+     'blurry': 0.998,
+     'profile': None,
+     'sunglasses': None,
+     'eyes': None}
+
+
+# Requirements
+matplotlib==3.3.4
+numpy==1.19.5
+tensorflow==2.9.1
+
+# Models
+This models have been trained separately using the code from [this other repository](https://github.com/jordi-zaragoza/pictures_classifier) that I created for 'weddings' pictures classification. Specially bad pictures with closed eyes.
+
+I used a pretrained model MobilenetV2. And then retrained using my own dataset.
+
+The models have been trained with around 10k pictures each.
+
+I cannot upload the datasets as they are mostly from weddings of a friend photographer.
+
+# How it works
+The program will check conditions and then continue or not depending on the result:
+1) Blurry picture
+2) Profile/Frontal
+3) Sunglasses
+4) Open-Closed eyes
+
+
+
+
+    
+
+
+

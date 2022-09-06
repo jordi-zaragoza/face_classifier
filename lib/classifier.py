@@ -1,4 +1,4 @@
-from face_class import Face
+from .face_class import Face
 
 
 def classifier(name='face1', path='../data/test/open_test/closed5.jpg', show=True):

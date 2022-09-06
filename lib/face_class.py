@@ -1,12 +1,12 @@
-from image_class import Image
-from eye_class import Eye
-import model_lib
+from .image_class import Image
+from .eye_class import Eye
+from .model_lib import load_model
 
 
 class Face(Image):
-    model_sunglasses = model_lib.load_model('model_sunglasses')
-    model_blurry = model_lib.load_model('model_blurry')
-    model_profile = model_lib.load_model('model_profile')
+    model_sunglasses = load_model('model_sunglasses')
+    model_blurry = load_model('model_blurry')
+    model_profile = load_model('model_profile')
 
     def __init__(self, name, image_or_path=None, eyes=2):
         super().__init__(name, image_or_path)

@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
-import model_lib
+from .model_lib import predict_model
 import tensorflow as tf
 
 
@@ -33,4 +33,4 @@ class Image:
         plt.imshow(self.image.astype(np.uint8))
 
     def predict(self, model, round_val=3):
-        return round(model_lib.predict_model(self.image, model), round_val)
+        return round(predict_model(self.image, model), round_val)
