@@ -19,10 +19,10 @@ https://test.pypi.org/project/face-classifier/.
 ```python
 from face_classifier import classifier
 
-classifier(name='face1', path='data/open_test/closed5.jpg')
+classifier(name='face1', path='face_classifier/data/open_test/closed5.jpg')
 ```
 
-![png](data/readme/TRY_IT_2_2.png)
+![png](face_classifier/data/readme/TRY_IT_2_2.png)
 
     {'name': 'face1',
      'blurry': 0.0,
@@ -33,10 +33,10 @@ classifier(name='face1', path='data/open_test/closed5.jpg')
 ### Open eyes:
 
 ```python
-classifier(name='face2', path='data/open_test/open2.jpg')
+classifier(name='face2', path='face_classifier/data/open_test/open2.jpg')
 ```
 
-![png](data/readme/TRY_IT_3_2.png)
+![png](face_classifier/data/readme/TRY_IT_3_2.png)
 
     {'name': 'face2',
      'blurry': 0.0,
@@ -47,10 +47,10 @@ classifier(name='face2', path='data/open_test/open2.jpg')
 ### Profile image
 
 ```python
-classifier(name='face3', path='data/profile_test/profile2.jpg')
+classifier(name='face3', path='face_classifier/data/profile_test/profile2.jpg')
 ```
 
-![png](data/readme/TRY_IT_4_2.png)
+![png](face_classifier/data/readme/TRY_IT_4_2.png)
 
     {'name': 'face3',
      'blurry': 0.0,
@@ -61,10 +61,10 @@ classifier(name='face3', path='data/profile_test/profile2.jpg')
 ### Sunglasses image
 
 ```python
-classifier(name='face4', path='data/sunglasses_test/sunglass1.jpg')
+classifier(name='face4', path='face_classifier/data/sunglasses_test/sunglass1.jpg')
 ```
 
-![png](data/readme/TRY_IT_5_2.png)
+![png](face_classifier/data/readme/TRY_IT_5_2.png)
 
     {'name': 'face4',
      'blurry': 0.0,
@@ -75,9 +75,9 @@ classifier(name='face4', path='data/sunglasses_test/sunglass1.jpg')
 ### Blurry image
 
 ```python
-classifier(name='face5', path='data/blurry_test/blurry12.jpg')
+classifier(name='face5', path='face_classifier/data/blurry_test/blurry12.jpg')
 ```
-![png](data/readme/TRY_IT_6_2.png)
+![png](face_classifier/data/readme/TRY_IT_6_2.png)
 
     {'name': 'face5',
      'blurry': 0.998,

@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.1.0'
+VERSION = '0.1.2'
 PACKAGE_NAME = 'face_classifier'
 AUTHOR = 'Jordi Zaragoza'
 AUTHOR_EMAIL = 'j.z.cuffi@gmail.com'
@@ -33,6 +33,6 @@ setup(
     install_requires=INSTALL_REQUIRES,
     license=LICENSE,
     packages=find_packages(),
-    package_data={'face_classifier': ['model/*']},
+    package_data={'face_classifier': ['data/readme/*', 'model/*']},
     include_package_data=True
 )
