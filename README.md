@@ -6,9 +6,11 @@ This repository is used for face classification. It can detect:
 - profile/frontal
 - blurry image.
 
-You can find the repository on [github]('https://github.com/jordi-zaragoza/face-classifier').
+You can find the repository on [github]:
+https://github.com/jordi-zaragoza/face-classifier.
 
-If you want to use the library directly, go to [pypi]('https://test.pypi.org/project/face-classifier/').
+If you want to use the library directly, go to [pypi]:
+https://test.pypi.org/project/face-classifier/.
 
 
 ## Use Examples
