@@ -10,10 +10,10 @@ You can find the repository on [github](https://github.com/jordi-zaragoza/face_c
 
 If you want to use the library directly, go to [pypi](https://pypi.org/project/face-classify).
 
-# Disclaimer
+## Disclaimer
 The classifier works better with face cropped pictures, the models have been trained using [this face recognition repossitory](https://pypi.org/project/face-recognition/) on group pictures.
 
-Better use it in combination or crop the face picture yourself.
+Better use them in combination or crop the face picture yourself.
 
 This repository comes with absolutely no guarantees. 
 
