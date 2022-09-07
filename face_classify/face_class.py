@@ -1,6 +1,8 @@
 from .image_class import Image
 from .eye_class import Eye
 from .model_lib import load_model
+import face_recognition
+import numpy as np
 
 
 class Face(Image):
@@ -8,12 +10,16 @@ class Face(Image):
     model_blurry = load_model('model_blurry')
     model_profile = load_model('model_profile')
 
-    def __init__(self, name, image_or_path=None, eyes=2):
+    def __init__(self, name, image_or_path=None, eyes_num=2, thresholds=(0.25, 0.999, 0.4, 0.01), crop_face=True):
         super().__init__(name, image_or_path)
         self.sunglasses = None
         self.profile = None
         self.blurry = None
         self.eye = None
+        self.thresholds = thresholds
+        self.eyes_num = eyes_num
+        if crop_face:
+            self.crop_face()
         self.predictions()
 
     def get_eyes(self, eyes):
@@ -50,27 +56,37 @@ class Face(Image):
     def predict_sunglasses(self):
         self.sunglasses = round(1 - self.predict(self.model_sunglasses), 3)  # not sunglasses 0 - sunglasses 1
 
-    def show_predictions(self, threshold=0.5):
-        if self.blurry > threshold:
+    def show_predictions(self):
+        if self.blurry > self.thresholds[0]:
             print('Blurry image')
-        elif self.profile > threshold:
+        elif self.profile > self.thresholds[1]:
             print('Profile image')
-        elif self.sunglasses > threshold:
+        elif self.sunglasses > self.thresholds[2]:
             print('Sunglasses image')
         else:
-            if self.eye[0].open > threshold and self.eye[1].open > threshold:
+            if self.eye[0].open > self.thresholds[3] and self.eye[1].open > self.thresholds[3]:
                 print('Open eyes:')
-            elif self.eye[0].open < threshold and self.eye[1].open < threshold:
+            elif self.eye[0].open < self.thresholds[3] and self.eye[1].open < self.thresholds[3]:
                 print('Closed eyes:')
             else:
                 print('Unknown:')
 
-    def predictions(self, threshold=0.5):
+    def crop_face(self):
+        face_locations = face_recognition.face_locations(self.image.astype('uint8'))
+        if len(face_locations) == 1:
+            top, right, bottom, left = face_locations[0]
+            self.image = self.image[top:bottom, left:right]
+        elif len(face_locations) < 1:
+            print('Cannot find any faces on the picture')
+        else:
+            print('More than 1 faces found')
+
+    def predictions(self):
         self.predict_blurry()
-        if self.blurry < threshold:
+        if self.blurry < self.thresholds[0]:
             self.predict_profile()
-            if self.profile < threshold:
+            if self.profile < self.thresholds[1]:
                 self.predict_sunglasses()
-                if self.sunglasses < threshold:
+                if self.sunglasses < self.thresholds[2]:
                     self.get_eyes(eyes=2)
                     self.open_eyes()

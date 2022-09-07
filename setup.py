@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 PACKAGE_NAME = 'face_classify'
 AUTHOR = 'Jordi Zaragoza'
 AUTHOR_EMAIL = 'j.z.cuffi@gmail.com'
