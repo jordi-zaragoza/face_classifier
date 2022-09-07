@@ -6,11 +6,9 @@ This repository is used for face classification. It can detect:
 - profile/frontal
 - blurry image.
 
-You can find the repository on [github]:
-https://github.com/jordi-zaragoza/face-classifier.
+You can find the repository on [github](https://github.com/jordi-zaragoza/face_classifier).
 
-If you want to use the library directly, go to [pypi]:
-https://test.pypi.org/project/face-classifier/.
+If you want to use the library directly, go to [pypi](https://test.pypi.org/project/face_classifier/).
 
 
 ## Use Examples
@@ -22,7 +20,7 @@ from face_classifier import classifier
 classifier(name='face1', path='face_classifier/data/open_test/closed5.jpg')
 ```
 
-![png](face_classifier/data/readme/TRY_IT_2_2.png)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_2_2.png?raw=true)
 
     {'name': 'face1',
      'blurry': 0.0,
@@ -36,7 +34,7 @@ classifier(name='face1', path='face_classifier/data/open_test/closed5.jpg')
 classifier(name='face2', path='face_classifier/data/open_test/open2.jpg')
 ```
 
-![png](face_classifier/data/readme/TRY_IT_3_2.png)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_3_2.png?raw=true)
 
     {'name': 'face2',
      'blurry': 0.0,
@@ -50,7 +48,7 @@ classifier(name='face2', path='face_classifier/data/open_test/open2.jpg')
 classifier(name='face3', path='face_classifier/data/profile_test/profile2.jpg')
 ```
 
-![png](face_classifier/data/readme/TRY_IT_4_2.png)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_4_2.png?raw=true)
 
     {'name': 'face3',
      'blurry': 0.0,
@@ -64,7 +62,7 @@ classifier(name='face3', path='face_classifier/data/profile_test/profile2.jpg')
 classifier(name='face4', path='face_classifier/data/sunglasses_test/sunglass1.jpg')
 ```
 
-![png](face_classifier/data/readme/TRY_IT_5_2.png)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_5_2.png?raw=true)
 
     {'name': 'face4',
      'blurry': 0.0,
@@ -77,7 +75,7 @@ classifier(name='face4', path='face_classifier/data/sunglasses_test/sunglass1.jp
 ```python
 classifier(name='face5', path='face_classifier/data/blurry_test/blurry12.jpg')
 ```
-![png](face_classifier/data/readme/TRY_IT_6_2.png)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_6_2.png?raw=true)
 
     {'name': 'face5',
      'blurry': 0.998,

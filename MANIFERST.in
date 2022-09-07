@@ -1,2 +1,1 @@
 include face_classifier/model/*
-include face_classifier/data/readme/*
