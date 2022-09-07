@@ -26,7 +26,7 @@ from face_classify import classifier
 classifier(name='face1', path='face_classify/data/open_test/closed5.jpg')
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_2_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_2_2.png?raw=true)
 
     {'name': 'face1',
      'blurry': 0.0,
@@ -40,7 +40,7 @@ classifier(name='face1', path='face_classify/data/open_test/closed5.jpg')
 classifier(name='face2', path='face_classify/data/open_test/open2.jpg')
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_3_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_3_2.png?raw=true)
 
     {'name': 'face2',
      'blurry': 0.0,
@@ -54,7 +54,7 @@ classifier(name='face2', path='face_classify/data/open_test/open2.jpg')
 classifier(name='face3', path='face_classify/data/profile_test/profile2.jpg')
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_4_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_4_2.png?raw=true)
 
     {'name': 'face3',
      'blurry': 0.0,
@@ -68,7 +68,7 @@ classifier(name='face3', path='face_classify/data/profile_test/profile2.jpg')
 classifier(name='face4', path='face_classify/data/sunglasses_test/sunglass1.jpg')
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_5_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_5_2.png?raw=true)
 
     {'name': 'face4',
      'blurry': 0.0,
@@ -81,7 +81,7 @@ classifier(name='face4', path='face_classify/data/sunglasses_test/sunglass1.jpg'
 ```python
 classifier(name='face5', path='face_classify/data/blurry_test/blurry12.jpg')
 ```
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_6_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_6_2.png?raw=true)
 
     {'name': 'face5',
      'blurry': 0.998,
