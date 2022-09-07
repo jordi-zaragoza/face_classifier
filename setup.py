@@ -3,8 +3,8 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.1.4'
-PACKAGE_NAME = 'face_classifier'
+VERSION = '0.0.2'
+PACKAGE_NAME = 'face_classify'
 AUTHOR = 'Jordi Zaragoza'
 AUTHOR_EMAIL = 'j.z.cuffi@gmail.com'
 URL = 'https://github.com/jordi-zaragoza'
@@ -33,6 +33,6 @@ setup(
     install_requires=INSTALL_REQUIRES,
     license=LICENSE,
     packages=find_packages(),
-    package_data={'face_classifier': ['model/*']},
+    package_data={'face_classify': ['model/*']},
     include_package_data=True
 )

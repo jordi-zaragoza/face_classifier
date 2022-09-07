@@ -8,16 +8,22 @@ This repository is used for face classification. It can detect:
 
 You can find the repository on [github](https://github.com/jordi-zaragoza/face_classifier).
 
-If you want to use the library directly, go to [pypi](https://test.pypi.org/project/face_classifier/).
+If you want to use the library directly, go to [pypi](https://pypi.org/project/face-classify).
 
+# Disclaimer
+The classifier works better with face cropped pictures, the models have been trained using [this face recognition repossitory](https://pypi.org/project/face-recognition/) on group pictures.
+
+Better use it in combination or crop the face picture yourself.
+
+This repository comes with absolutely no guarantees. 
 
 ## Use Examples
 ### Closed eyes:
 
 ```python
-from face_classifier import classifier
+from face_classify import classifier
 
-classifier(name='face1', path='face_classifier/data/open_test/closed5.jpg')
+classifier(name='face1', path='face_classify/data/open_test/closed5.jpg')
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_2_2.png?raw=true)
@@ -31,7 +37,7 @@ classifier(name='face1', path='face_classifier/data/open_test/closed5.jpg')
 ### Open eyes:
 
 ```python
-classifier(name='face2', path='face_classifier/data/open_test/open2.jpg')
+classifier(name='face2', path='face_classify/data/open_test/open2.jpg')
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_3_2.png?raw=true)
@@ -45,7 +51,7 @@ classifier(name='face2', path='face_classifier/data/open_test/open2.jpg')
 ### Profile image
 
 ```python
-classifier(name='face3', path='face_classifier/data/profile_test/profile2.jpg')
+classifier(name='face3', path='face_classify/data/profile_test/profile2.jpg')
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_4_2.png?raw=true)
@@ -59,7 +65,7 @@ classifier(name='face3', path='face_classifier/data/profile_test/profile2.jpg')
 ### Sunglasses image
 
 ```python
-classifier(name='face4', path='face_classifier/data/sunglasses_test/sunglass1.jpg')
+classifier(name='face4', path='face_classify/data/sunglasses_test/sunglass1.jpg')
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_5_2.png?raw=true)
@@ -73,7 +79,7 @@ classifier(name='face4', path='face_classifier/data/sunglasses_test/sunglass1.jp
 ### Blurry image
 
 ```python
-classifier(name='face5', path='face_classifier/data/blurry_test/blurry12.jpg')
+classifier(name='face5', path='face_classify/data/blurry_test/blurry12.jpg')
 ```
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classifier/data/readme/TRY_IT_6_2.png?raw=true)
 
