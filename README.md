@@ -13,8 +13,10 @@ If you want to use the library directly, go to [pypi]('https://test.pypi.org/pro
 
 ## Use Examples
 ### Closed eyes:
+
 ```python
-from lib.classifier import classifier
+from face_classifier import classifier
+
 classifier(name='face1', path='data/open_test/closed5.jpg')
 ```
 

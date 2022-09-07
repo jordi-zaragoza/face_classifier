@@ -1,13 +1,16 @@
 import numpy as np
 import tensorflow as tf
+import os
+
+package_directory = os.path.dirname(os.path.abspath(__file__))
 
 
 def load_model(model_name):
-    json_file = open('model/' + model_name + '.json', 'r')
+    json_file = open(package_directory + '/model/' + model_name + '.json', 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     loaded_model = tf.keras.models.model_from_json(loaded_model_json)
-    loaded_model.load_weights('model/' + model_name + '_weights.h5')
+    loaded_model.load_weights(package_directory + '/model/' + model_name + '_weights.h5')
     print('Loaded model: ', model_name)
     return loaded_model
 

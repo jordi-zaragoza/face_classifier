@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.4'
+VERSION = '0.1.0'
 PACKAGE_NAME = 'face_classifier'
 AUTHOR = 'Jordi Zaragoza'
 AUTHOR_EMAIL = 'j.z.cuffi@gmail.com'
@@ -16,9 +16,9 @@ LONG_DESC_TYPE = "text/markdown"
 
 
 INSTALL_REQUIRES = [
-        'matplotlib>=3.3.4',
+        'matplotlib>=3.0',
         'numpy>=1.8',
-        'tensorflow>=2.9.1',
+        'tensorflow>=2.6',
       ]
 
 setup(
@@ -33,5 +33,6 @@ setup(
     install_requires=INSTALL_REQUIRES,
     license=LICENSE,
     packages=find_packages(),
+    package_data={'face_classifier': ['model/*']},
     include_package_data=True
 )
