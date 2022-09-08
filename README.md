@@ -18,15 +18,18 @@ Better use them in combination or crop the face picture yourself.
 This repository comes with absolutely no guarantees. 
 
 ## Use Examples
-### Closed eyes:
-
 ```python
 from face_classify import classifier
-
-classifier(name='face1', path='face_classify/data/open_test/closed5.jpg')
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_2_2.png?raw=true)
+
+## Closed eyes
+
+
+```python
+classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg')
+```
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_2_2.png?raw=true)
 
     {'name': 'face1',
      'blurry': 0.0,
@@ -34,57 +37,77 @@ classifier(name='face1', path='face_classify/data/open_test/closed5.jpg')
      'sunglasses': 0.002,
      'eyes': (0.009, 0.011)}
 
-### Open eyes:
+### with crop face
+
+    {'name': 'face1',
+     'blurry': 0.0,
+     'profile': 0.0,
+     'sunglasses': 0.0,
+     'eyes': (0.0, 0.0)}
+
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_5_2.png?raw=true)
 
 ```python
-classifier(name='face2', path='face_classify/data/open_test/open2.jpg')
+classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg', crop_face = True)
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_3_2.png?raw=true)
 
+## Open eyes
+
+
+```python
+classifier(name='face2', image_or_path='face_classify/data/open_test/open2.jpg', crop_face = True)
+```
+
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_7_2.png?raw=true)
+    
     {'name': 'face2',
      'blurry': 0.0,
      'profile': 0.0,
      'sunglasses': 0.0,
-     'eyes': (0.763, 0.782)}
+     'eyes': (0.918, 0.924)}
 
-### Profile image
+
+## Profile
+
 
 ```python
-classifier(name='face3', path='face_classify/data/profile_test/profile2.jpg')
+classifier(name='face3', image_or_path='face_classify/data/profile_test/profile2.jpg', crop_face = True)
 ```
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_4_2.png?raw=true)
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_9_2.png?raw=true)
 
     {'name': 'face3',
-     'blurry': 0.0,
+     'blurry': 0.001,
      'profile': 1.0,
      'sunglasses': None,
      'eyes': None}
 
-### Sunglasses image
+
+## Sunglasses
+
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_11_2.png?raw=true)
 
 ```python
-classifier(name='face4', path='face_classify/data/sunglasses_test/sunglass1.jpg')
+classifier(name='face4', image_or_path='face_classify/data/sunglasses_test/sunglass1.jpg', crop_face = True)
 ```
-
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_5_2.png?raw=true)
 
     {'name': 'face4',
      'blurry': 0.0,
-     'profile': 0.093,
-     'sunglasses': 0.93,
-     'eyes': None}
+     'profile': 0.0,
+     'sunglasses': 0.313,
+     'eyes': (0.0, 0.0)}
 
-### Blurry image
+## Blurry
+
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_13_2.png?raw=true)
 
 ```python
-classifier(name='face5', path='face_classify/data/blurry_test/blurry12.jpg')
+classifier(name='face5', image_or_path='face_classify/data/blurry_test/blurry12.jpg', crop_face = True)
 ```
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme/TRY_IT_6_2.png?raw=true)
 
     {'name': 'face5',
-     'blurry': 0.998,
+     'blurry': 1.0,
      'profile': None,
      'sunglasses': None,
      'eyes': None}
