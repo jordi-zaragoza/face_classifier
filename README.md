@@ -31,6 +31,8 @@ classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg
 ```
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_3_2.png?raw=true)
 
+Output:
+
     {'name': 'face1',
      'blurry': 0.0,
      'profile': 0.0,
@@ -43,14 +45,16 @@ classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg
 classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg', crop_face = True)
 ```
 
+![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_5_2.png?raw=true)
+
 Output:
+
     {'name': 'face1',
      'blurry': 0.0,
      'profile': 0.0,
      'sunglasses': 0.0,
      'eyes': (0.0, 0.0)}
 
-![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_5_2.png?raw=true)
 
 
 ## Open eyes
@@ -62,7 +66,8 @@ classifier(name='face2', image_or_path='face_classify/data/open_test/open2.jpg',
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_7_2.png?raw=true)
 
-Output:    
+Output:   
+
     {'name': 'face2',
      'blurry': 0.0,
      'profile': 0.0,
@@ -80,6 +85,7 @@ classifier(name='face3', image_or_path='face_classify/data/profile_test/profile2
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_9_2.png?raw=true)
 
 Output:
+
     {'name': 'face3',
      'blurry': 0.001,
      'profile': 1.0,
@@ -96,6 +102,7 @@ classifier(name='face4', image_or_path='face_classify/data/sunglasses_test/sungl
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_11_2.png?raw=true)
 
 Output:
+
     {'name': 'face4',
      'blurry': 0.0,
      'profile': 0.0,
