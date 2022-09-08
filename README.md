@@ -130,6 +130,7 @@ Output:
 - matplotlib==3.3.4
 - numpy==1.19.5
 - tensorflow==2.9.1
+- face_recognition==1.3.0
 
 # Models
 These models have been trained separately using the code from [this other repository](https://github.com/jordi-zaragoza/pictures_classifier) that I created for 'weddings' pictures classification. Specially bad pictures with closed eyes.

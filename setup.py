@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.6'
+VERSION = '0.0.7'
 PACKAGE_NAME = 'face_classify'
 AUTHOR = 'Jordi Zaragoza'
 AUTHOR_EMAIL = 'j.z.cuffi@gmail.com'
@@ -19,6 +19,7 @@ INSTALL_REQUIRES = [
         'matplotlib>=3.0',
         'numpy>=1.8',
         'tensorflow>=2.6',
+        'face_recognition>=1.3.0'
       ]
 
 setup(
