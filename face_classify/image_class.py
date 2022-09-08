@@ -19,12 +19,18 @@ class Image:
         else:
             self.image = image_or_path
 
+    def img_reshape(self, x0, x1, y0, y1):
+        self.image = self.image[
+                     round(self.image.shape[0] * x0):round(self.image.shape[0] * x1),
+                     round(self.image.shape[1] * y0):round(self.image.shape[1] * y1)]
+
     def get_image_from_path(self, path):
         img = tf.keras.preprocessing.image.load_img(path)
         self.image = tf.keras.preprocessing.image.img_to_array(img)
 
     def mirror(self):
-        self.image = tf.image.flip_left_right(self.image)
+        img = tf.image.flip_left_right(self.image)
+        self.image = tf.keras.preprocessing.image.img_to_array(img)
         self.mirrored = not self.mirrored
         self.name = self.name + '_mirror' if self.mirrored else self.name.split('_mirror')[0]
 

@@ -2,7 +2,6 @@ from .image_class import Image
 from .eye_class import Eye
 from .model_lib import load_model
 import face_recognition
-import numpy as np
 
 
 class Face(Image):
@@ -15,7 +14,7 @@ class Face(Image):
         self.sunglasses = None
         self.profile = None
         self.blurry = None
-        self.eye = None
+        self.eyes = None
         self.thresholds = thresholds
         self.eyes_num = eyes_num
         if crop_face:
@@ -24,28 +23,20 @@ class Face(Image):
 
     def get_eyes(self, eyes):
         if eyes == 1:
-            print('Not implemented yet')
+            eye1 = Eye(self.name, self.image, 'one')
+            self.eyes = [eye1]
 
-        if eyes == 2:
-            eye1 = Eye(self.name, self.crop_eye())
-            eye2 = Eye(self.name, self.crop_eye(side='left'), 'left')
+        elif eyes == 2:
+            eye1 = Eye(self.name, self.image)
+            eye2 = Eye(self.name, self.image, 'left')
+            self.eyes = [eye1, eye2]
 
-            self.eye = (eye1, eye2)
+        else:
+            print('please insert 1 or 2 eyes for this face')
 
     def open_eyes(self):
-        if self.eye is not None:
-            return self.eye[0].open, self.eye[1].open
-
-    def crop_eye(self, side='right', amplitude=0.45, height=0.1, wide=0.1):
-        if side == 'right':
-            image_eye = self.image[
-                        round(self.image.shape[0] * height):round(self.image.shape[0] * (height + amplitude)),
-                        round(self.image.shape[1] * wide):round(self.image.shape[1] * (amplitude + wide))]
-        else:
-            image_eye = self.image[
-                        round(self.image.shape[0] * height):round(self.image.shape[0] * (height + amplitude)),
-                        round(self.image.shape[1] * (1 - (amplitude + wide))):round(self.image.shape[1] * (1 - wide))]
-        return image_eye
+        if self.eyes is not None:
+            return [eye.open for eye in self.eyes]
 
     def predict_blurry(self):
         self.blurry = round(1 - self.predict(self.model_blurry), 3)  # not blurry 0 - blurry 1
@@ -64,9 +55,9 @@ class Face(Image):
         elif self.sunglasses > self.thresholds[2]:
             print('Sunglasses image')
         else:
-            if self.eye[0].open > self.thresholds[3] and self.eye[1].open > self.thresholds[3]:
+            if self.eyes[0].open > self.thresholds[3] and self.eyes[1].open > self.thresholds[3]:
                 print('Open eyes:')
-            elif self.eye[0].open < self.thresholds[3] and self.eye[1].open < self.thresholds[3]:
+            elif self.eyes[0].open < self.thresholds[3] and self.eyes[1].open < self.thresholds[3]:
                 print('Closed eyes:')
             else:
                 print('Unknown:')
@@ -90,3 +81,8 @@ class Face(Image):
                 if self.sunglasses < self.thresholds[2]:
                     self.get_eyes(eyes=2)
                     self.open_eyes()
+            else:
+                # This should be another type of sunglasses and open eyes predictor
+                # self.predict_sunglasses()
+                self.get_eyes(eyes=1)
+                # self.open_eyes()

@@ -142,11 +142,13 @@ The models have been trained with around 10k pictures each.
 I cannot upload the datasets as they are mostly from weddings of a friend photographer.
 
 # How it works
-The program will check conditions and then continue or not depending on the result:
-1) Blurry picture
-2) Profile/Frontal
-3) Sunglasses
-4) Open-Closed eyes
+The main goal is to find if a face has opened or closed eyes. 
+For this purpose the program will check a condition and then continue to the next one depending on the result, the order is as follows:
+
+1) Check if Blurry picture -> Continues if its not blurry
+2) Profile/Frontal picture -> Continues if its frontal
+3) Wearing Sunglasses -> Continue if not sunglasses detected
+4) Check Open-Closed eyes
 
 
 
