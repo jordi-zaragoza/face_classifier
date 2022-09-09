@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from .model_lib import predict_model
 import tensorflow as tf
+import face_recognition
 
 
 class Image:
@@ -11,6 +12,7 @@ class Image:
         self.name = name
         self.get_image(image_or_path)
         self.mirrored = False
+        self.picture_faces = []
 
     def get_image(self, image_or_path):
         if isinstance(image_or_path, str):
@@ -23,6 +25,9 @@ class Image:
         self.image = self.image[
                      round(self.image.shape[0] * x0):round(self.image.shape[0] * x1),
                      round(self.image.shape[1] * y0):round(self.image.shape[1] * y1)]
+
+    def img_crop(self, top, right, bottom, left):
+        return self.image[top:bottom, left:right]
 
     def get_image_from_path(self, path):
         img = tf.keras.preprocessing.image.load_img(path)
@@ -40,3 +45,11 @@ class Image:
 
     def predict(self, model, round_val=3):
         return round(predict_model(self.image, model), round_val)
+
+    def detect_faces(self):
+        face_locations = face_recognition.face_locations(self.image.astype('uint8'))
+        if len(face_locations) > 0:
+            for num, location in enumerate(face_locations):
+                self.picture_faces.append(self.img_crop(*location))
+        else:
+            print('Cannot find any faces on the picture')

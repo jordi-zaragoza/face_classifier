@@ -1,7 +1,6 @@
 from .image_class import Image
 from .eye_class import Eye
 from .model_lib import load_model
-import face_recognition
 
 
 class Face(Image):
@@ -63,12 +62,9 @@ class Face(Image):
                 print('Unknown:')
 
     def crop_face(self):
-        face_locations = face_recognition.face_locations(self.image.astype('uint8'))
-        if len(face_locations) == 1:
-            top, right, bottom, left = face_locations[0]
-            self.image = self.image[top:bottom, left:right]
-        elif len(face_locations) < 1:
-            print('Cannot find any faces on the picture')
+        self.detect_faces()
+        if len(self.picture_faces) == 1:
+            self.image = self.picture_faces[0]
         else:
             print('More than 1 faces found')
 
