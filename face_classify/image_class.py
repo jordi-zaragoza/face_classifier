@@ -3,16 +3,20 @@ import numpy as np
 from .model_lib import predict_model
 import tensorflow as tf
 import face_recognition
+import itertools
 
 
 class Image:
 
-    def __init__(self, name, image_or_path):
+    img_id = itertools.count()
+
+    def __init__(self, image_or_path, name='image'):
+        self.img_id = next(self.img_id)
+        self.name = name + '_id_' + str(self.img_id)
         self.image = None
-        self.name = name
         self.get_image(image_or_path)
         self.mirrored = False
-        self.picture_faces = []
+        self.face_locations = []
 
     def get_image(self, image_or_path):
         if isinstance(image_or_path, str):
@@ -26,7 +30,7 @@ class Image:
                      round(self.image.shape[0] * x0):round(self.image.shape[0] * x1),
                      round(self.image.shape[1] * y0):round(self.image.shape[1] * y1)]
 
-    def img_crop(self, top, right, bottom, left):
+    def crop_from_coordinates(self, top, right, bottom, left):
         return self.image[top:bottom, left:right]
 
     def get_image_from_path(self, path):
@@ -49,7 +53,8 @@ class Image:
     def detect_faces(self):
         face_locations = face_recognition.face_locations(self.image.astype('uint8'))
         if len(face_locations) > 0:
-            for num, location in enumerate(face_locations):
-                self.picture_faces.append(self.img_crop(*location))
+            for location in face_locations:
+                self.face_locations.append(location)
         else:
             print('Cannot find any faces on the picture')
+
