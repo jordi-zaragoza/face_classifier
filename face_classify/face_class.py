@@ -8,7 +8,7 @@ class Face(Image):
     model_blurry = load_model('model_blurry')
     model_profile = load_model('model_profile')
 
-    def __init__(self, image_or_path=None, name='face', eyes_num=2, thresholds=(0.5, 0.5, 0.5, 0.5), crop_face=False):
+    def __init__(self, image_or_path=None, name='face', eyes_num=2, thresholds=(0.25, 0.999, 0.3, 0.1), crop_face=False):
         super().__init__(image_or_path, name)
         self.classification = None
         self.sunglasses = None
