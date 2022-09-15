@@ -1,10 +1,12 @@
+import imageio
 from matplotlib import pyplot as plt
 import numpy as np
+
+from .general_lib import create_folder
 from .model_lib import predict_model
 import tensorflow as tf
 import face_recognition
 import itertools
-
 
 class Image:
 
@@ -20,7 +22,7 @@ class Image:
 
     def get_image(self, image_or_path):
         if isinstance(image_or_path, str):
-            self.get_image_from_path(image_or_path)
+            self.load_image(image_or_path)
 
         else:
             self.image = image_or_path
@@ -33,9 +35,13 @@ class Image:
     def crop_from_coordinates(self, top, right, bottom, left):
         return self.image[top:bottom, left:right]
 
-    def get_image_from_path(self, path):
+    def load_image(self, path):
         img = tf.keras.preprocessing.image.load_img(path)
         self.image = tf.keras.preprocessing.image.img_to_array(img)
+
+    def save_image(self, path):
+        create_folder(path)
+        imageio.imwrite(path + '/' + self.name + '.jpg', self.image)
 
     def mirror(self):
         img = tf.image.flip_left_right(self.image)

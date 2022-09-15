@@ -44,4 +44,3 @@ class GroupPicture(Image):
             dc = dc | new_element
 
         self.results = pd.DataFrame(dc).transpose()
-

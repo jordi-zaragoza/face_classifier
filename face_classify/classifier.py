@@ -1,13 +1,21 @@
-from .face_class import Face
+from .general_lib import *
+from .group_picture_class import *
 
 
-def classifier(image_or_path='../data/test/open_test/closed5.jpg', name='face1', show=True, crop_face=False):
+def sort_group_closed_eyes(path='./output'):
+    image_list = os.listdir(path)
+    image_list = filter_images(image_list)
 
-    face = Face(image_or_path=image_or_path,
-                name=name,
-                crop_face=crop_face)
+    for image_name in image_list:
+        path_image = path + '/' + image_name
+        group_picture = GroupPicture(path_image, image_name)
 
-    if show:
-        face.show()
+        any_closed_eyes = any(group_picture.results.prediction.apply(lambda x: x == 'Closed eyes'))
+        if any_closed_eyes:
+            move_file(image_name, path, path + '/closed_eyes')
 
+
+def classifier(image_or_path, crop_face=False, name='img'):
+    face = Face(image_or_path=image_or_path, crop_face=crop_face, name=name)
+    face.show()
     return face.classification
