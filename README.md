@@ -26,7 +26,7 @@ This repository comes with absolutely no guarantees.
 
 ```python
 from face_classify import classifier
-classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg')
+classifier(image_or_path='face_classify/data/open_test/closed5.jpg')
 ```
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_3_2.png?raw=true)
 
@@ -41,7 +41,7 @@ Output:
 #### with crop face
 
 ```python
-classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg', crop_face = True)
+classifier(image_or_path='face_classify/data/open_test/closed5.jpg', crop_face = True)
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_5_2.png?raw=true)
@@ -60,7 +60,7 @@ Output:
 
 
 ```python
-classifier(name='face2', image_or_path='face_classify/data/open_test/open2.jpg', crop_face = True)
+classifier(image_or_path='face_classify/data/open_test/open2.jpg', crop_face = True)
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_7_2.png?raw=true)
@@ -78,7 +78,7 @@ Output:
 
 
 ```python
-classifier(name='face3', image_or_path='face_classify/data/profile_test/profile2.jpg', crop_face = True)
+classifier(image_or_path='face_classify/data/profile_test/profile2.jpg', crop_face = True)
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_9_2.png?raw=true)
@@ -95,7 +95,7 @@ Output:
 ### Sunglasses
 
 ```python
-classifier(name='face4', image_or_path='face_classify/data/sunglasses_test/sunglass1.jpg', crop_face = True)
+classifier(image_or_path='face_classify/data/sunglasses_test/sunglass1.jpg', crop_face = True)
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_11_2.png?raw=true)
@@ -111,7 +111,7 @@ Output:
 ### Blurry
 
 ```python
-classifier(name='face5', image_or_path='face_classify/data/blurry_test/blurry12.jpg', crop_face = True)
+classifier(image_or_path='face_classify/data/blurry_test/blurry12.jpg', crop_face = True)
 ```
 
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_13_2.png?raw=true)
