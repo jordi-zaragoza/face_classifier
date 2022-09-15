@@ -18,15 +18,14 @@ Better use them in combination or crop the face picture yourself.
 This repository comes with absolutely no guarantees. 
 
 ## Use Examples
+
+- for face classifier refer to [Try_IT_face.ipynb](https://github.com/jordi-zaragoza/face_classifier/blob/main/TRY_IT_face.ipynb)
+- for group face classifier refer to [Try_IT_group.ipynb](https://github.com/jordi-zaragoza/face_classifier/blob/main/TRY_IT_group.ipynb)
+
+### Closed eyes
+
 ```python
 from face_classify import classifier
-```
-
-
-## Closed eyes
-
-
-```python
 classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg')
 ```
 ![png](https://github.com/jordi-zaragoza/face_classifier/blob/main/face_classify/data/readme_files/TRY_IT_3_2.png?raw=true)
@@ -39,7 +38,7 @@ Output:
      'sunglasses': 0.002,
      'eyes': (0.009, 0.011)}
 
-### with crop face
+#### with crop face
 
 ```python
 classifier(name='face1', image_or_path='face_classify/data/open_test/closed5.jpg', crop_face = True)
@@ -57,7 +56,7 @@ Output:
 
 
 
-## Open eyes
+### Open eyes
 
 
 ```python
@@ -75,7 +74,7 @@ Output:
      'eyes': (0.918, 0.924)}
 
 
-## Profile
+### Profile
 
 
 ```python
@@ -93,7 +92,7 @@ Output:
      'eyes': None}
 
 
-## Sunglasses
+### Sunglasses
 
 ```python
 classifier(name='face4', image_or_path='face_classify/data/sunglasses_test/sunglass1.jpg', crop_face = True)
@@ -109,7 +108,7 @@ Output:
      'sunglasses': 0.313,
      'eyes': (0.0, 0.0)}
 
-## Blurry
+### Blurry
 
 ```python
 classifier(name='face5', image_or_path='face_classify/data/blurry_test/blurry12.jpg', crop_face = True)
@@ -126,13 +125,13 @@ Output:
      'eyes': None}
 
 
-# Requirements
+## Requirements
 - matplotlib==3.3.4
 - numpy==1.19.5
 - tensorflow==2.9.1
 - face_recognition==1.3.0
 
-# Models
+## Models
 These models have been trained separately using the code from [this other repository](https://github.com/jordi-zaragoza/pictures_classifier) that I created for 'weddings' pictures classification. Specially bad pictures with closed eyes.
 
 I used a pretrained model MobilenetV2. And then retrained using my own dataset.
@@ -141,7 +140,7 @@ The models have been trained with around 10k pictures each.
 
 I cannot upload the datasets as they are mostly from weddings of a friend photographer.
 
-# How it works
+## How it works
 The main goal is to find if a face has opened or closed eyes. 
 For this purpose the program will check a condition and then continue to the next one depending on the result, the order is as follows:
 
